@@ -1,4 +1,4 @@
-ADD_LIBRARY(elliptics_monitor STATIC
+ADD_LIBRARY(elliptics_monitor SHARED
             monitor.cpp
             server.cpp
             statistics.cpp
