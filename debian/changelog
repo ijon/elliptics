@@ -1,3 +1,19 @@
+elliptics (2.26.9.2~localnode-1) unstable; urgency=low
+
+  [ Evgeniy Polyakov ]
+  * ioclient: fixed lookup info dump, allow to use raw ID specified via -I option
+  * ioclient: print group id when lookup succeeds
+  * ioclient: use dnet_print_time() to print modification time
+
+  [ Kirill Smorodinnikov ]
+  * fixed crash caused by using freed memory
+
+  [ Ivan Chelubeev ]
+  * tests: targets for each test module, ability to run any test individually
+  * srw: localnode service
+
+ -- Ivan Chelubeev <ijon@yandex-team.ru>  Mon, 23 Nov 2015 17:54:34 +0300
+
 elliptics (2.26.9.1) unstable; urgency=low
 
   * tests: set iterator flags to zero in read-one-range test
