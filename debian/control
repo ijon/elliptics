@@ -5,8 +5,6 @@ Maintainer: Evgeniy Polyakov <zbr@ioremap.net>
 Build-Depends:	cdbs,
 		cmake (>= 2.6),
 		debhelper (>= 7.0.50~),
-		eblob (>= 0.23.11),
-		blackhole-dev (= 0.2.4-1),
 		libboost-dev,
 		libboost-iostreams-dev,
 		libboost-program-options-dev,
@@ -14,9 +12,6 @@ Build-Depends:	cdbs,
 		libboost-system-dev,
 		libboost-thread-dev,
 		libboost-filesystem-dev,
-		libcocaine-core2,
-		libcocaine-dev (>= 0.11.2.1),
-		cocaine-framework-native-dev (>= 0.11.0.1),
 		libltdl-dev,
 		libmsgpack-dev,
 		python-dev,
@@ -24,6 +19,11 @@ Build-Depends:	cdbs,
 		python-pip,
 		python-virtualenv,
 		msgpack-python | python-msgpack,
+		eblob (>= 0.23.11),
+		blackhole-dev (>= 1.0.0-0alpha6),
+		libcocaine-dev (>= 0.12.5.0-rc6+nmu1),
+		libcocaine-plugin-node-dev (>= 0.12.5.0-rc6),
+		libcocaine-framework-native-dev (> 0.12.4-1),
 		handystats (>= 1.10.2)
 Standards-Version: 3.8.0
 Homepage: http://www.ioremap.net/projects/elliptics
@@ -31,7 +31,7 @@ XS-Python-Version: >= 2.6
 
 Package: elliptics
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, eblob (>= 0.23.11), elliptics-client (= ${Source-Version}), libcocaine-core2, handystats (>= 1.10.0)
+Depends: ${shlibs:Depends}, ${misc:Depends}, eblob (>= 0.23.11), elliptics-client (= ${Source-Version}), libcocaine-core3 (>= 0.12.5), handystats (>= 1.10.0)
 Replaces: elliptics-2.10, srw
 Provides: elliptics-2.10
 Description: Distributed hash table storage
@@ -52,7 +52,7 @@ Description: Distributed hash table storage (cocaine plugin)
 
 Package: libcocaine-plugin-elliptics-dev
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, cocaine-framework-native-dev (>= 0.10.6.0)
+Depends: ${shlibs:Depends}, ${misc:Depends}, libcocaine-framework-native-dev (>= 0.12.4-1)
 Description: Distributed hash table storage (cocaine plugin includes)
  Elliptics network is a fault tolerant distributed hash table object storage.
 
@@ -66,7 +66,7 @@ Description: Distributed hash table storage (debug files)
 
 Package: elliptics-dev
 Architecture: any
-Depends: elliptics-client (= ${Source-Version}), blackhole-dev (= 0.2.4-1)
+Depends: elliptics-client (= ${Source-Version})
 Description: Distributed hash table storage (includes)
  Elliptics network is a fault tolerant distributed hash table object storage.
 
